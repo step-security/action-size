@@ -60,8 +60,7 @@ class Processor {
         core.setOutput('stale_labels', staleLabel.join('\n'));
     }
     getCurrentLabels() {
-        const payload = github.context
-            .payload;
+        const payload = github.context.payload;
         return payload.pull_request.labels
             .filter(label => [
             this.options.sizeXSLabel,
@@ -93,8 +92,7 @@ class Processor {
     }
     static getChangedLines() {
         var _a, _b;
-        const payload = github.context
-            .payload;
+        const payload = github.context.payload;
         return (((_a = payload.pull_request.additions) !== null && _a !== void 0 ? _a : 0) +
             ((_b = payload.pull_request.deletions) !== null && _b !== void 0 ? _b : 0));
     }
