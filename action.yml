@@ -1,0 +1,59 @@
+name: Actions Ecosystem Size
+description: Add label based on the number of lines changed in a pull request.
+author: 'step-security'
+inputs:
+  size_xs_label:
+    description: The name for size XS label.
+    required: false
+    default: size/XS
+  size_s_label:
+    description: The name for size S label.
+    required: false
+    default: size/S
+  size_m_label:
+    description: The name for size M label.
+    required: false
+    default: size/M
+  size_l_label:
+    description: The name for size L label.
+    required: false
+    default: size/L
+  size_xl_label:
+    description: The name for size XL label.
+    required: false
+    default: size/XL
+  size_xxl_label:
+    description: The name for size XXL label.
+    required: false
+    default: size/XXL
+  size_s_threshold:
+    description: The threshold for size S.
+    required: false
+    default: "10"
+  size_m_threshold:
+    description: The threshold for size M.
+    required: false
+    default: "30"
+  size_l_threshold:
+    description: The threshold for size L.
+    required: false
+    default: "100"
+  size_xl_threshold:
+    description: The threshold for size XL.
+    required: false
+    default: "500"
+  size_xxl_threshold:
+    description: The threshold for size XXL.
+    required: false
+    default: "1000"
+outputs:
+  new_label:
+    description: The new label's name to be added. If there's no label to be added, it the value is `''`.
+  stale_labels:
+    description: The stale labels' name to be removed. If there're multiple labels, they're separated by line breaks. If there's no labels to be removed, it the value is `''`.
+runs:
+  using: node24
+  main: dist/index.js
+branding:
+  icon: bookmark
+  color: blue
