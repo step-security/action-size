@@ -1,5 +1,4 @@
 import github from 'eslint-plugin-github';
-import jest from 'eslint-plugin-jest';
 
 export default [
   {
@@ -13,13 +12,7 @@ export default [
         ecmaVersion: 2022,
         sourceType: 'module',
         project: './tsconfig.json'
-      },
-      globals: {
-        ...jest.environments.globals.globals
       }
-    },
-    plugins: {
-      jest
     },
     rules: {
       'eslint-comments/no-use': 'off',
