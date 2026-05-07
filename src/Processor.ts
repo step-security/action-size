@@ -1,6 +1,8 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import * as Webhooks from '@octokit/webhooks';
+import {EmitterWebhookEvent} from '@octokit/webhooks';
+
+type PullRequestPayload = EmitterWebhookEvent<'pull_request'>['payload'];
 
 export interface ProcessorOptions {
   sizeXSLabel: string;
@@ -41,8 +43,7 @@ export class Processor {
   }
 
   private getCurrentLabels(): string[] {
-    const payload = github.context
-      .payload as Webhooks.WebhookPayloadPullRequest;
+    const payload = github.context.payload as PullRequestPayload;
 
     return payload.pull_request.labels
       .filter(label =>
@@ -78,9 +79,11 @@ export class Processor {
   }
 
   private static getChangedLines(): number {
-    const payload = github.context
-      .payload as Webhooks.WebhookPayloadPullRequest;
+    const payload = github.context.payload as PullRequestPayload;
 
-    return payload.pull_request.additions + payload.pull_request.deletions;
+    return (
+      (payload.pull_request.additions ?? 0) +
+      (payload.pull_request.deletions ?? 0)
+    );
   }
 }
