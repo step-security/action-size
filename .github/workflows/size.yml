@@ -18,7 +18,7 @@ jobs:
       - uses: ./
         id: size
 
-      - uses: step-security/action-remove-labels@8b9e252cff41d87c133a7b5c5dbb536bc7a1d441 # v1.3.0
+      - uses: step-security/action-remove-labels@0336f915cebfb9c55d1a00317ae094db2fb74208 # v1.3.1
         with:
           github_token: ${{ secrets.github_token }}
           labels: ${{ steps.size.outputs.stale_labels }}
