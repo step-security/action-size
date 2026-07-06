@@ -1,0 +1,18 @@
+{
+   "schema_version": "1",
+   "onboarding_type": "copied",
+   "archived": false,
+   "maintained_action_name": "step-security/action-size",
+   "upstream_full_repo_name": "actions-ecosystem/action-size",
+   "action_type": "node",
+   "last_release": {
+     "tag_name": "v2.2.0",
+     "created_at": "2026-05-07T06:47:41Z",
+     "published_at": "2026-05-11T06:32:04Z"
+   },
+   "sync": {
+     "ignore_presets": [
+       "defaults_v1"
+     ]
+   }
+ }
