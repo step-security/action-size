@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@octokit/webhooks": "^14.2.0",
-    "@types/node": "^20.0.0",
+    "@types/node": "^25.9.1",
     "@vercel/ncc": "^0.38.1",
     "eslint": "^9.26.0",
     "eslint-plugin-github": "^6.0.0",
